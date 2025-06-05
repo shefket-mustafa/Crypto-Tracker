@@ -4,8 +4,8 @@ import { TrendingUp, TrendingDown } from 'lucide-react';
 interface CryptoCardProps {
   name: string;
   symbol: string;
-  price: string;
-  change: string;
+  price: number;
+  change: number;
   isPositive: boolean;
 }
 

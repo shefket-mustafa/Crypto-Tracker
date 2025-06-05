@@ -1,33 +1,94 @@
+import { Bitcoin, TrendingUp } from "lucide-react";
+import Layout from "../components/Layout";
+import CryptoChart from "../components/CryptoChart";
+import CryptoCard from "../components/CryptoCard";
+import { useTopCrypto } from "@/hooks/use-top-crypto";
+import { Crypto, Currency } from "@/interfaces/interface";
+import { useTopCurrency } from "@/hooks/use-top-currency";
+import CurrencyCard from "@/components/CurrencyCard";
 
-import { Bitcoin, TrendingUp } from 'lucide-react';
-import Layout from '../components/Layout';
-import CryptoChart from '../components/CryptoChart';
-import CryptoCard from '../components/CryptoCard';
 
 const Index = () => {
-  const topCryptos = [
-    { name: 'Bitcoin', symbol: 'BTC', price: '$58,234', change: '+2.34%', isPositive: true },
-    { name: 'Ethereum', symbol: 'ETH', price: '$4,123', change: '+1.89%', isPositive: true },
-    { name: 'Solana', symbol: 'SOL', price: '$178', change: '-0.45%', isPositive: false },
-    { name: 'Cardano', symbol: 'ADA', price: '$1.23', change: '+3.21%', isPositive: true },
-    { name: 'Polkadot', symbol: 'DOT', price: '$32.45', change: '+0.78%', isPositive: true },
-  ];
+
 
   const currencies = [
-    { name: 'USD/EUR', symbol: 'USDEUR', price: '0.85', change: '+0.12%', isPositive: true },
-    { name: 'USD/GBP', symbol: 'USDGBP', price: '0.73', change: '-0.05%', isPositive: false },
-    { name: 'USD/JPY', symbol: 'USDJPY', price: '149.82', change: '+0.34%', isPositive: true },
-    { name: 'USD/CAD', symbol: 'USDCAD', price: '1.35', change: '+0.08%', isPositive: true },
-    { name: 'USD/AUD', symbol: 'USDAUD', price: '1.52', change: '-0.15%', isPositive: false },
+    {
+      name: "USD/EUR",
+      symbol: "USDEUR",
+      price: "0.85",
+      change: "+0.12%",
+      isPositive: true,
+    },
+    {
+      name: "USD/GBP",
+      symbol: "USDGBP",
+      price: "0.73",
+      change: "-0.05%",
+      isPositive: false,
+    },
+    {
+      name: "USD/JPY",
+      symbol: "USDJPY",
+      price: "149.82",
+      change: "+0.34%",
+      isPositive: true,
+    },
+    {
+      name: "USD/CAD",
+      symbol: "USDCAD",
+      price: "1.35",
+      change: "+0.08%",
+      isPositive: true,
+    },
+    {
+      name: "USD/AUD",
+      symbol: "USDAUD",
+      price: "1.52",
+      change: "-0.15%",
+      isPositive: false,
+    },
   ];
 
   const stocks = [
-    { name: 'Apple', symbol: 'AAPL', price: '$189.50', change: '+1.23%', isPositive: true },
-    { name: 'Microsoft', symbol: 'MSFT', price: '$378.85', change: '+0.89%', isPositive: true },
-    { name: 'Google', symbol: 'GOOGL', price: '$142.56', change: '-0.34%', isPositive: false },
-    { name: 'Tesla', symbol: 'TSLA', price: '$234.12', change: '+2.45%', isPositive: true },
-    { name: 'Amazon', symbol: 'AMZN', price: '$151.78', change: '+0.67%', isPositive: true },
+    {
+      name: "Apple",
+      symbol: "AAPL",
+      price: "$189.50",
+      change: "+1.23%",
+      isPositive: true,
+    },
+    {
+      name: "Microsoft",
+      symbol: "MSFT",
+      price: "$378.85",
+      change: "+0.89%",
+      isPositive: true,
+    },
+    {
+      name: "Google",
+      symbol: "GOOGL",
+      price: "$142.56",
+      change: "-0.34%",
+      isPositive: false,
+    },
+    {
+      name: "Tesla",
+      symbol: "TSLA",
+      price: "$234.12",
+      change: "+2.45%",
+      isPositive: true,
+    },
+    {
+      name: "Amazon",
+      symbol: "AMZN",
+      price: "$151.78",
+      change: "+0.67%",
+      isPositive: true,
+    },
   ];
+
+  const { data: topCryptoData, loading: topCryptoLoading, error: topCryptoError } = useTopCrypto(5);
+  const { data: topCurrencyData, loading: topCurrencyLoding, error: topCurrencyError} = useTopCurrency(5);
 
   return (
     <Layout>
@@ -41,7 +102,8 @@ const Index = () => {
             </h1>
           </div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Track real-time cryptocurrency prices, market trends, and make informed investment decisions
+            Track real-time cryptocurrency prices, market trends, and make
+            informed investment decisions
           </p>
         </div>
 
@@ -59,8 +121,15 @@ const Index = () => {
               Top Cryptocurrencies
             </h2>
             <div className="space-y-4">
-              {topCryptos.map((crypto, index) => (
-                <CryptoCard key={index} {...crypto} />
+              {topCryptoData.map((crypto: Crypto) => (
+                <CryptoCard
+                  key={crypto.name}
+                  name={crypto.id.toLocaleUpperCase()}
+                  symbol={crypto.symbol.toLocaleUpperCase()}
+                  price={crypto.price}
+                  change={crypto.ath_change_percentage}
+                  isPositive={crypto.ath_change_percentage >= 0}
+                />
               ))}
             </div>
           </div>
@@ -72,8 +141,14 @@ const Index = () => {
               Currency Rates
             </h2>
             <div className="space-y-4">
-              {currencies.map((currency, index) => (
-                <CryptoCard key={index} {...currency} />
+            {topCurrencyData.map((currency: Currency) => (
+                <CurrencyCard
+                  key={currency?.name}
+                  name={currency?.name}
+                  symbol={currency?.symbol.toLocaleUpperCase()}
+                  price={currency?.price}
+                  
+                />
               ))}
             </div>
           </div>
@@ -85,9 +160,9 @@ const Index = () => {
               Stock Market
             </h2>
             <div className="space-y-4">
-              {stocks.map((stock, index) => (
+              {/* {stocks.map((stock, index) => (
                 <CryptoCard key={index} {...stock} />
-              ))}
+              ))} */}
             </div>
           </div>
         </div>
