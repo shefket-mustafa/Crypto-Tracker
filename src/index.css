@@ -1,0 +1,71 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 10 10% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 12 6% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 12 6% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 14 100% 57%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 12 6% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 12 6% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 14 100% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 12 6% 20%;
+    --input: 12 6% 15%;
+    --ring: 14 100% 57%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 10 10% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 14 100% 57%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 12 6% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 12 6% 20%;
+    --sidebar-ring: 14 100% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .crypto-gradient {
+    @apply bg-gradient-to-r from-red-600 to-orange-500;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .nav-item {
+    @apply relative px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-red-600/20 hover:to-orange-500/20 hover:backdrop-blur-sm;
+  }
+}
