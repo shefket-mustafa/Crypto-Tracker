@@ -37,10 +37,10 @@ Follow these steps to get the project running locally:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR-USERNAME/crypto-view.git
+git clone https://github.com/shefket-mustafa/Crypto-Tracker.git
 
 # 2. Navigate into the project folder
-cd crypto-view
+cd Crypto-Tracker
 
 # 3. Install dependencies
 npm install
