@@ -1,73 +1,70 @@
-# Welcome to your Lovable project
+# 🪙 CryptoView – AI-Assisted Project with React, TypeScript and Tailwind 
 
-## Project info
+**CryptoView** is a modern web application bootstrapped with the help of **Lovable AI Project Builder**. 
+It is built with **React**, **TypeScript**, **Tailwind CSS**, and **shadcn/ui** for clean UI components. 
+This project serves as a template foundation to practice the use of AI.
 
-**URL**: https://lovable.dev/projects/a3595b3e-de2f-413f-bac4-090a3b89ec6f
+---
 
-## How can I edit this code?
+## 🚀 Tech Stack
 
-There are several ways of editing your application.
+- ✅ React 19+
+- ✅ TypeScript
+- ✅ Tailwind CSS
+- ✅ shadcn/ui
+- ✅ Vite for development
+- ✅ AI-assisted project scaffold (Lovable.app)
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a3595b3e-de2f-413f-bac4-090a3b89ec6f) and start prompting.
+## 📂 Project Structure
 
-Changes made via Lovable will be committed automatically to this repo.
+```bash
+src/
+├── components/      # Reusable UI components
+├── pages/           # Page-level views
+├── hooks/           # Custom React hooks
+├── lib/             # Utilities and helper logic
+├── app/             # Routing and app layout
+└── index.tsx        # Entry point
+```
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🛠️ Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Follow these steps to get the project running locally:
 
-Follow these steps:
+```bash
+# 1. Clone the repository
+git clone https://github.com/YOUR-USERNAME/crypto-view.git
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# 2. Navigate into the project folder
+cd crypto-view
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# 3. Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
+## 🧠 About the Template
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This project was scaffolded using **Lovable App's AI Builder**, which generates a professional React + TS setup out of the box. While the base structure and UI are pre-built, i will
+:
+- Add my own **business logic**
+- Connect to **crypto APIs** or external data sources
+- Implement authentication, user dashboards, and more
 
-## What technologies are used for this project?
+---
 
-This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🙌 Credits
 
-## How can I deploy this project?
+- Project scaffold: [Lovable.app](https://lovable.app)
 
-Simply open [Lovable](https://lovable.dev/projects/a3595b3e-de2f-413f-bac4-090a3b89ec6f) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
