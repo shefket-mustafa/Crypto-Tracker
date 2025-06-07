@@ -1,5 +1,10 @@
 # 🪙 CryptoView – AI-Assisted Project with React, TypeScript and Tailwind 
 
+## 🚧 Project Status
+
+**CryptoView** is currently a work in progress. Core features are being developed, including real-time crypto and currency tracking, stock integration, and responsive UI improvements. Stay tuned for updates!
+
+
 **CryptoView** is a modern web application bootstrapped with the help of **Lovable AI Project Builder**. 
 It is built with **React**, **TypeScript**, **Tailwind CSS**, and **shadcn/ui** for clean UI components. 
 This project serves as a template foundation to practice the use of AI.
