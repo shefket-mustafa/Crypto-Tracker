@@ -6,48 +6,11 @@ import { useTopCrypto } from "@/hooks/use-top-crypto";
 import { Crypto, Currency } from "@/interfaces/interface";
 import { useTopCurrency } from "@/hooks/use-top-currency";
 import CurrencyCard from "@/components/CurrencyCard";
+import { useTopStocks } from "@/hooks/use-top-stocks";
+import StockCard from "@/components/StockCard";
 
 
 const Index = () => {
-
-
-  const currencies = [
-    {
-      name: "USD/EUR",
-      symbol: "USDEUR",
-      price: "0.85",
-      change: "+0.12%",
-      isPositive: true,
-    },
-    {
-      name: "USD/GBP",
-      symbol: "USDGBP",
-      price: "0.73",
-      change: "-0.05%",
-      isPositive: false,
-    },
-    {
-      name: "USD/JPY",
-      symbol: "USDJPY",
-      price: "149.82",
-      change: "+0.34%",
-      isPositive: true,
-    },
-    {
-      name: "USD/CAD",
-      symbol: "USDCAD",
-      price: "1.35",
-      change: "+0.08%",
-      isPositive: true,
-    },
-    {
-      name: "USD/AUD",
-      symbol: "USDAUD",
-      price: "1.52",
-      change: "-0.15%",
-      isPositive: false,
-    },
-  ];
 
   const stocks = [
     {
@@ -89,6 +52,7 @@ const Index = () => {
 
   const { data: topCryptoData, loading: topCryptoLoading, error: topCryptoError } = useTopCrypto(5);
   const { data: topCurrencyData, loading: topCurrencyLoding, error: topCurrencyError} = useTopCurrency(5);
+  const { data: topStocksData, loading: TopStocksLoading, error: TopStocksError } = useTopStocks();
 
   return (
     <Layout>
@@ -160,9 +124,9 @@ const Index = () => {
               Stock Market
             </h2>
             <div className="space-y-4">
-              {/* {stocks.map((stock, index) => (
-                <CryptoCard key={index} {...stock} />
-              ))} */}
+              {topStocksData.map((stock) => (
+                <StockCard key={stock?.name} {...stock} />
+              ))}
             </div>
           </div>
         </div>
