@@ -1,5 +1,5 @@
 
-import { TrendingUp, Mail, Phone, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
+import { TrendingUp, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Github, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -17,11 +17,11 @@ const Footer = () => {
               <p>Real-time market data and analysis</p>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+359 894229461</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4" />
-                <span>New York, NY</span>
+                <span>Burgas, Bulgaria</span>
               </div>
             </div>
           </div>
@@ -34,7 +34,7 @@ const Footer = () => {
               <p>Providing accurate market insights since 2024</p>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />
-                <span>info@cryptotracker.com</span>
+                <span>shefket.must@gmail.com</span>
               </div>
             </div>
           </div>
@@ -45,13 +45,13 @@ const Footer = () => {
             <div className="space-y-4">
               <p className="text-muted-foreground">Stay updated with the latest crypto news</p>
               <div className="flex space-x-4">
-                <a href="#" className="p-2 rounded-lg bg-secondary hover:crypto-gradient transition-all duration-300">
-                  <Facebook className="w-5 h-5" />
+                <a href="https://github.com/shefket-mustafa" target='blank' className="p-2 rounded-lg bg-secondary hover:crypto-gradient transition-all duration-300">
+                  <Github className="w-5 h-5" />
                 </a>
-                <a href="#" className="p-2 rounded-lg bg-secondary hover:crypto-gradient transition-all duration-300">
-                  <Twitter className="w-5 h-5" />
+                <a href="https://www.linkedin.com/in/shefket-mustafa-81356a360/" target='blank' className="p-2 rounded-lg bg-secondary hover:crypto-gradient transition-all duration-300">
+                  <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="#" className="p-2 rounded-lg bg-secondary hover:crypto-gradient transition-all duration-300">
+                <a href="https://www.instagram.com/shefket_sum/" target='blank' className="p-2 rounded-lg bg-secondary hover:crypto-gradient transition-all duration-300">
                   <Instagram className="w-5 h-5" />
                 </a>
               </div>
