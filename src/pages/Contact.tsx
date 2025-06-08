@@ -35,7 +35,7 @@ const Contact = () => {
 
     if (!formRef.current) return;
 
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formRef.current, 'YOUR_PUBLIC_KEY')
+    emailjs.sendForm('service_hrg4u4h', 'template_9lxhspf', formRef.current, 'oRIvXdIHKSTXZth8s')
       .then(() => {
         alert('Message sent successfully!');
         formRef.current?.reset();
@@ -66,36 +66,30 @@ const Contact = () => {
             </h2>
 
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-muted-foreground">First Name</label>
-                  <Input name="from_name" placeholder="John" className="bg-secondary border-border" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-muted-foreground">Last Name</label>
-                  <Input name="from_last" placeholder="Doe" className="bg-secondary border-border" />
-                </div>
-              </div>
+  <div className="space-y-2">
+    <label className="text-sm font-medium text-muted-foreground">Name</label>
+    <Input name="from_name" placeholder="Your Name" className="bg-secondary border-border" required />
+  </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-muted-foreground">Email</label>
-                <Input name="from_email" type="email" placeholder="john@example.com" className="bg-secondary border-border" />
-              </div>
+  <div className="space-y-2">
+    <label className="text-sm font-medium text-muted-foreground">Email</label>
+    <Input name="from_email" type="email" placeholder="you@example.com" className="bg-secondary border-border" required />
+  </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-muted-foreground">Subject</label>
-                <Input name="subject" placeholder="How can we help you?" className="bg-secondary border-border" />
-              </div>
+  <div className="space-y-2">
+    <label className="text-sm font-medium text-muted-foreground">Subject</label>
+    <Input name="subject" placeholder="What's this about?" className="bg-secondary border-border" required />
+  </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-muted-foreground">Message</label>
-                <Textarea name="message" placeholder="Tell us more about your inquiry..." rows={5} className="bg-secondary border-border resize-none" />
-              </div>
+  <div className="space-y-2">
+    <label className="text-sm font-medium text-muted-foreground">Message</label>
+    <Textarea name="message" placeholder="Write your message here..." rows={5} className="bg-secondary border-border resize-none" required />
+  </div>
 
-              <Button type="submit" className="w-full crypto-gradient hover:opacity-80">
-                Send Message
-              </Button>
-            </form>
+  <Button type="submit" className="w-full crypto-gradient hover:opacity-80">
+    Send Message
+  </Button>
+</form>
           </div>
 
           {/* Contact Information */}
