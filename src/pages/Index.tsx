@@ -2,57 +2,20 @@ import { Bitcoin, TrendingUp } from "lucide-react";
 import Layout from "../components/Layout";
 import CryptoChart from "../components/CryptoChart";
 import CryptoCard from "../components/CryptoCard";
-import { useTopCrypto } from "@/hooks/use-top-crypto";
-import { Crypto, Currency } from "@/interfaces/interface";
-import { useTopCurrency } from "@/hooks/use-top-currency";
+import { Crypto, CryptoCardProps, Currency, Stock } from "@/interfaces/interface";
 import CurrencyCard from "@/components/CurrencyCard";
-import { useTopStocks } from "@/hooks/use-top-stocks";
 import StockCard from "@/components/StockCard";
 
 
-const Index = () => {
+export interface IndexProps {
+  topCryptoData: CryptoCardProps[];
+  topCurrencyData: Currency[];
+  topStocksData: Stock[];
+}
 
-  const stocks = [
-    {
-      name: "Apple",
-      symbol: "AAPL",
-      price: "$189.50",
-      change: "+1.23%",
-      isPositive: true,
-    },
-    {
-      name: "Microsoft",
-      symbol: "MSFT",
-      price: "$378.85",
-      change: "+0.89%",
-      isPositive: true,
-    },
-    {
-      name: "Google",
-      symbol: "GOOGL",
-      price: "$142.56",
-      change: "-0.34%",
-      isPositive: false,
-    },
-    {
-      name: "Tesla",
-      symbol: "TSLA",
-      price: "$234.12",
-      change: "+2.45%",
-      isPositive: true,
-    },
-    {
-      name: "Amazon",
-      symbol: "AMZN",
-      price: "$151.78",
-      change: "+0.67%",
-      isPositive: true,
-    },
-  ];
+const Index = ({topCryptoData, topCurrencyData, topStocksData}: IndexProps) => {
 
-  const { data: topCryptoData, loading: topCryptoLoading, error: topCryptoError } = useTopCrypto(5);
-  const { data: topCurrencyData, loading: topCurrencyLoding, error: topCurrencyError} = useTopCurrency(5);
-  const { data: topStocksData, loading: TopStocksLoading, error: TopStocksError } = useTopStocks();
+ 
 
   return (
     <Layout>
@@ -87,12 +50,12 @@ const Index = () => {
             <div className="space-y-4">
               {topCryptoData.map((crypto: Crypto) => (
                 <CryptoCard
-                  key={crypto.name}
-                  name={crypto.id.toLocaleUpperCase()}
-                  symbol={crypto.symbol.toLocaleUpperCase()}
-                  price={crypto.price}
-                  change={crypto.ath_change_percentage}
-                  isPositive={crypto.ath_change_percentage >= 0}
+                key={crypto.name}
+                name={crypto.name.toUpperCase()}
+                symbol={crypto.symbol}
+                price={crypto.price}
+                change={crypto.change}
+                isPositive={crypto.isPositive}
                 />
               ))}
             </div>

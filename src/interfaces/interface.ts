@@ -1,9 +1,9 @@
 export interface Crypto {
-    id: string;
-    name: string;
-    symbol: string;
-    price: number;
-    ath_change_percentage: number;
+  name: string;
+  symbol: string;
+  price: number;
+  change: number;
+  isPositive: boolean;
   };    
 
   export interface CryptoCardProps {
@@ -19,5 +19,13 @@ export interface Crypto {
     symbol: string
     price: number
   };
+
+  export interface Stock {
+    name: string;
+    symbol: string;
+    price: number; 
+    change: number; 
+    isPositive: boolean;
+  }
 
   

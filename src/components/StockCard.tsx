@@ -13,7 +13,7 @@ const StockCard = ({ name, symbol, price, change, isPositive }: StockCardProps) 
     <div className="bg-card hover-lift rounded-xl p-4 border border-border">
       <div className="flex items-center justify-between mb-3">
         <div>
-          <h4 className="font-semibold text-white">{name}</h4>
+          <h4 className="font-semibold text-orange-400">{name}</h4>
           <p className="text-sm text-muted-foreground">{symbol}</p>
         </div>
         <div className={`p-2 rounded-lg ${isPositive ? 'bg-green-500/20' : 'bg-red-500/20'}`}>

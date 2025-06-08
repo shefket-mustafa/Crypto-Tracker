@@ -1,31 +1,49 @@
-
+import { useRef } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import Layout from '../components/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'support@cryptotracker.com',
+      details: 'shefket.must@gmail.com',
       subtitle: 'We respond within 24 hours'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+1 (555) 123-4567',
+      details: '+359 894229461',
       subtitle: 'Mon-Fri 9AM-6PM EST'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: '123 Crypto Street, New York, NY 10001',
+      details: 'Burgas',
       subtitle: 'Our headquarters'
     }
   ];
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formRef.current, 'YOUR_PUBLIC_KEY')
+      .then(() => {
+        alert('Message sent successfully!');
+        formRef.current?.reset();
+      })
+      .catch(() => {
+        alert('Failed to send message. Try again.');
+      });
+  };
 
   return (
     <Layout>
@@ -46,39 +64,35 @@ const Contact = () => {
               <Send className="w-6 h-6 mr-3 text-orange-500" />
               Send us a Message
             </h2>
-            
-            <form className="space-y-6">
+
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-muted-foreground">First Name</label>
-                  <Input placeholder="John" className="bg-secondary border-border" />
+                  <Input name="from_name" placeholder="John" className="bg-secondary border-border" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-muted-foreground">Last Name</label>
-                  <Input placeholder="Doe" className="bg-secondary border-border" />
+                  <Input name="from_last" placeholder="Doe" className="bg-secondary border-border" />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <label className="text-sm font-medium text-muted-foreground">Email</label>
-                <Input type="email" placeholder="john@example.com" className="bg-secondary border-border" />
+                <Input name="from_email" type="email" placeholder="john@example.com" className="bg-secondary border-border" />
               </div>
-              
+
               <div className="space-y-2">
                 <label className="text-sm font-medium text-muted-foreground">Subject</label>
-                <Input placeholder="How can we help you?" className="bg-secondary border-border" />
+                <Input name="subject" placeholder="How can we help you?" className="bg-secondary border-border" />
               </div>
-              
+
               <div className="space-y-2">
                 <label className="text-sm font-medium text-muted-foreground">Message</label>
-                <Textarea 
-                  placeholder="Tell us more about your inquiry..." 
-                  rows={5}
-                  className="bg-secondary border-border resize-none" 
-                />
+                <Textarea name="message" placeholder="Tell us more about your inquiry..." rows={5} className="bg-secondary border-border resize-none" />
               </div>
-              
-              <Button className="w-full crypto-gradient hover:opacity-80">
+
+              <Button type="submit" className="w-full crypto-gradient hover:opacity-80">
                 Send Message
               </Button>
             </form>
@@ -87,7 +101,7 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <h2 className="text-2xl font-bold">Get in Touch</h2>
-            
+
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <div key={index} className="bg-card rounded-xl p-6 border border-border hover-lift">
