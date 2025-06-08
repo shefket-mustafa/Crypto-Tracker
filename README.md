@@ -5,9 +5,28 @@
 **CryptoView** is currently a work in progress. Core features are being developed, including real-time crypto and currency tracking, stock integration, and responsive UI improvements. Stay tuned for updates!
 
 
-**CryptoView** is a modern web application bootstrapped with the help of **Lovable AI Project Builder**. 
+**Crypto Tracker** is a modern web application bootstrapped with the help of **Lovable AI Project Builder**. 
 It is built with **React**, **TypeScript**, **Tailwind CSS**, and **shadcn/ui** for clean UI components. 
 This project serves as a template foundation to practice the use of AI.
+
+---
+
+## 🔧 Features
+Crypto Tracker aims to provide a modern and responsive financial dashboard with the following features:
+
+📈 Live Cryptocurrency Tracking – View real-time prices, market caps, and trends.
+
+💱 Currency Exchange Rates – Track global currency pairs and fluctuations.
+
+📊 Top Performing Stocks – View top gainers and losers in the stock market.
+
+📬 Contact Form with Auto-Reply – Users can submit messages via a contact form and instantly receive a confirmation email via EmailJS.
+
+🎨 Clean UI – Designed with Tailwind CSS and shadcn/ui for a beautiful, modern interface.
+
+📱 Responsive Design – Optimized for desktop and mobile experiences.
+
+🚀 No Backend Required – Fully functional on the client side, thanks to services like EmailJS.
 
 ---
 
