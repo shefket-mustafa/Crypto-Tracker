@@ -84,11 +84,3 @@ This project was scaffolded using **Lovable App's AI Builder**, which generates 
 - Connect to **crypto APIs** or external data sources
 - Implement authentication, user dashboards, and more
 
----
-
-
-## 🙌 Credits
-
-- Project scaffold: [Lovable.app](https://lovable.app)
-
----
