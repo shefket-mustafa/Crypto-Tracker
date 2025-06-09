@@ -1,4 +1,4 @@
-# 🪙 CryptoView – AI-Assisted Project with React, TypeScript and Tailwind 
+# 🪙 Crypto Tracker – AI-Assisted Project with React, TypeScript and Tailwind 
 
 ## 🚧 Project Status
 
